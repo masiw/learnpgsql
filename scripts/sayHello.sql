@@ -14,18 +14,12 @@ CREATE DATABASE greetings;
 
 -- create table
 CREATE TABLE common_greetings (
-	id integer PRIMARY KEY,
-	greeting varchar(100)
+	id SERIAL NOT NULL PRIMARY KEY,
+	greeting VARCHAR(100)
 );
 
--- create sequence to populate primary key
-CREATE SEQUENCE greeting_sequence
-	start 1 
-	increment 1;
-
 -- populate table
-INSERT INTO common_greetings VALUES (
-	nextval('greeting_sequence'),	-- id primary key
+INSERT INTO common_greetings(greeting) VALUES (
 	'Hello'				-- greeting
 );
 
